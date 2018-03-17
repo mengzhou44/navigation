@@ -4,14 +4,13 @@ import {
   View
 } from 'react-native';
 
-import { MainNavigator } from './main-navigator'
-
+import { Root } from './navigators'
 
 export default class App extends Component {
   render() {
     return (
       <View style={{ flex: 1 }}>
-        <MainNavigator />
+        <Root />
       </View>
     );
   }
