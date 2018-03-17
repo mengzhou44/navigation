@@ -15,31 +15,32 @@ export const Root = StackNavigator({
   Home: {
     screen: ScreenHome,
     navigationOptions: ({ navigation }) => ({
-      title: `Home`
+      title: 'Home',
+      headerBackTitle: 'Back'
     }),
   },
   Scan: {
     screen: ScreenScan,
     navigationOptions: ({ navigation }) => ({
-      title: `Scan`
+      title: 'Scan'
     }),
   },
   Brand: {
     screen: ScreenBrand,
     navigationOptions: ({ navigation }) => ({
-      title: `Brand`
+      title: 'Brand',
     }),
   },
   Settings: {
     screen: ScreenSettings,
     navigationOptions: ({ navigation }) => ({
-      title: `Settings`
+      title: 'Settings'
     }),
   },
   Connection: {
     screen: ScreenConnection,
     navigationOptions: ({ navigation }) => ({
-      title: `Connection`
+      title: 'Connection'
     }),
   }
 },

@@ -36,7 +36,7 @@ export default class ScreenHome extends Component {
                         onPress={() => this.props.navigation.navigate('Settings')}
                     >
                         <View>
-                            <Text>Settings</Text>
+                            <Text style={styles.bottomTextStyle}>Settings</Text>
                         </View>
                     </TouchableWithoutFeedback>
 
@@ -44,7 +44,7 @@ export default class ScreenHome extends Component {
                         onPress={() => this.props.navigation.navigate('Connection')}
                     >
                         <View>
-                            <Text>Connection</Text>
+                            <Text style={styles.bottomTextStyle}>Connection</Text>
                         </View>
                     </TouchableWithoutFeedback>
 
@@ -79,5 +79,9 @@ const styles = {
         backgroundColor: colors.orange,
         flexDirection: 'row',
         justifyContent: 'space-between'
+    },
+    bottomTextStyle: {
+        fontSize: 20,
+        color: colors.white
     }
 }
