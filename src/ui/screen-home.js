@@ -3,6 +3,7 @@ import React, { Component } from 'react';
 import { View, Text, TouchableWithoutFeedback, StyleSheet } from 'react-native';
 
 import Icon from 'react-native-vector-icons/FontAwesome';
+import { Button } from './_common';
 import { colors } from './constants';
 
 export default class ScreenHome extends Component {
@@ -13,22 +14,19 @@ export default class ScreenHome extends Component {
     render() {
         return (
             <View style={styles.containerStyle}>
-                <View>
-                    <TouchableWithoutFeedback
-                        onPress={() => this.props.navigation.navigate('Scan')}
-                    >
-                        <View style={styles.buttonStyle}>
-                            <Text style={styles.buttonContentStyle}>Scan</Text>
-                        </View>
-                    </TouchableWithoutFeedback>
+                <View style={{ borderColor: colors.white, borderWidth: 1 }}>
 
-                    <TouchableWithoutFeedback
+                    <Button
                         onPress={() => this.props.navigation.navigate('Brand')}
                     >
-                        <View style={styles.buttonStyle}>
-                            <Text style={styles.buttonContentStyle}>Brand</Text>
-                        </View>
-                    </TouchableWithoutFeedback>
+                        Brand
+                    </Button>
+
+                    <Button
+                        onPress={() => this.props.navigation.navigate('Scan')}
+                    >
+                        Scan
+                    </Button>
                 </View>
                 <View style={styles.bottomStyle}>
                     <TouchableWithoutFeedback
@@ -56,31 +54,12 @@ export default class ScreenHome extends Component {
 const styles = {
     containerStyle: {
         flex: 1,
+        backgroundColor: colors.white,
         justifyContent: 'space-between',
         paddingTop: 100,
         alignItems: 'stretch'
     },
 
-    buttonStyle: {
-        paddingVertical: 12,
-        paddingHorizontal: 12,
-        borderRadius: 3,
-        backgroundColor: colors.blue,
-        alignItems: 'center',
-        justifyContent: 'center',
-        borderColor: colors.blue,
-        borderWidth: StyleSheet.hairlineWidth,
-        shadowColor: colors.black,
-        shadowOffset: { width: 0, height: 2 },
-        shadowOpacity: 0.1,
-        shadowRadius: 3,
-        margin: 10
-    },
-
-    buttonContentStyle: {
-        textAlign: 'center',
-        fontWeight: '600'
-    },
     bottomStyle: {
         height: 60,
         backgroundColor: colors.orange,
