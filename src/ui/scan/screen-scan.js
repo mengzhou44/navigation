@@ -2,10 +2,12 @@ import React, { Component } from 'react';
 
 import { View, Text } from 'react-native';
 
+import { globalStyles } from '../constants';
+
 export default class ScreenScan extends Component {
     render() {
         return (
-            <View style={styles.containerStyle}>
+            <View style={globalStyles.containerStyle}>
                 <Text style={styles.titleStyle}>
                     Scan
                       </Text>
@@ -15,11 +17,6 @@ export default class ScreenScan extends Component {
 }
 
 const styles = {
-    containerStyle: {
-        flex: 1,
-        justifyContent: 'center',
-        alignItems: 'center'
-    },
 
     titleStyle: {
         fontSize: 20,

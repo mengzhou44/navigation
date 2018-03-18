@@ -40,9 +40,12 @@ export const globalStyles = {
         color: colors.white
     },
 
-    container: {
+    containerStyle: {
         flex: 1,
-        justifyContent: 'flex-start'
+        justifyContent: 'center',
+        alignItems: 'center',
+        backgroundColor: colors.white
     },
+
 
 };

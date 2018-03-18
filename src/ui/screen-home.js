@@ -4,7 +4,9 @@ import { View, Text, TouchableWithoutFeedback, StyleSheet } from 'react-native';
 
 import Icon from 'react-native-vector-icons/FontAwesome';
 import { Button } from './_common';
-import { colors } from './constants';
+import { colors, globalStyles } from './constants';
+
+
 
 export default class ScreenHome extends Component {
     constructor(props) {
@@ -54,8 +56,8 @@ export default class ScreenHome extends Component {
 const styles = {
     containerStyle: {
         flex: 1,
-        backgroundColor: colors.white,
         justifyContent: 'space-between',
+        backgroundColor: colors.white,
         paddingTop: 100,
         alignItems: 'stretch'
     },
