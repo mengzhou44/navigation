@@ -11,41 +11,76 @@ import ScreenHome from './screen-home';
 import ScreenSettings from './screen-settings';
 import ScreenConnection from './screen-connection';
 
+const _headerStyle = {
+  headerStyle: {
+    backgroundColor: colors.orange
+  },
+  headerTintColor: colors.white,
+  headerTitleStyle: {
+    color: colors.white,
+    fontSize: 18,
+  },
+  headerBackTitleStyle: {
+    color: colors.white
+  }
+};
+
 export const Root = StackNavigator({
   Home: {
     screen: ScreenHome,
     navigationOptions: ({ navigation }) => ({
-      title: 'Home',
-      headerBackTitle: 'Back'
+      title: 'SmartMat',
+      headerBackTitle: 'Back',
+      headerStyle: {
+        backgroundColor: colors.orange
+      },
+      headerTitleStyle: {
+        color: colors.white,
+        fontSize: 20,
+      }
     }),
   },
   Scan: {
     screen: ScreenScan,
-    navigationOptions: ({ navigation }) => ({
-      title: 'Scan'
-    }),
+
+    navigationOptions: ({ navigation }) => (
+      {
+        ..._headerStyle,
+        title: 'Scan',
+      }
+    ),
   },
   Brand: {
     screen: ScreenBrand,
-    navigationOptions: ({ navigation }) => ({
-      title: 'Brand',
-    }),
+    navigationOptions: ({ navigation }) => (
+      {
+        ..._headerStyle,
+        title: 'Brand',
+      }
+    ),
   },
   Settings: {
     screen: ScreenSettings,
-    navigationOptions: ({ navigation }) => ({
-      title: 'Settings'
-    }),
+    navigationOptions: ({ navigation }) => (
+      {
+        ..._headerStyle,
+        title: 'Settings',
+      }
+    )
   },
   Connection: {
     screen: ScreenConnection,
-    navigationOptions: ({ navigation }) => ({
-      title: 'Connection'
-    }),
+    navigationOptions: ({ navigation }) => (
+      {
+        ..._headerStyle,
+        title: 'Connection',
+      }
+    )
   }
 },
   {
-    initialRouteName: 'Home'
+    initialRouteName: 'Home',
+    headerMode: 'float',
   }
 );
 

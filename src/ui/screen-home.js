@@ -1,14 +1,13 @@
 import React, { Component } from 'react';
 
-import { View, Text, TouchableWithoutFeedback } from 'react-native';
+import { View, Text, TouchableWithoutFeedback, StyleSheet } from 'react-native';
 
-import { BottomNavigator } from './navigators';
+import Icon from 'react-native-vector-icons/FontAwesome';
 import { colors } from './constants';
 
 export default class ScreenHome extends Component {
     constructor(props) {
         super(props);
-
     }
 
     render() {
@@ -18,16 +17,16 @@ export default class ScreenHome extends Component {
                     <TouchableWithoutFeedback
                         onPress={() => this.props.navigation.navigate('Scan')}
                     >
-                        <View style={styles.itemStyle}>
-                            <Text style={styles.itemContentStyle}>Scan</Text>
+                        <View style={styles.buttonStyle}>
+                            <Text style={styles.buttonContentStyle}>Scan</Text>
                         </View>
                     </TouchableWithoutFeedback>
 
                     <TouchableWithoutFeedback
                         onPress={() => this.props.navigation.navigate('Brand')}
                     >
-                        <View style={styles.itemStyle}>
-                            <Text style={styles.itemContentStyle}>Brand</Text>
+                        <View style={styles.buttonStyle}>
+                            <Text style={styles.buttonContentStyle}>Brand</Text>
                         </View>
                     </TouchableWithoutFeedback>
                 </View>
@@ -35,16 +34,16 @@ export default class ScreenHome extends Component {
                     <TouchableWithoutFeedback
                         onPress={() => this.props.navigation.navigate('Settings')}
                     >
-                        <View>
-                            <Text style={styles.bottomTextStyle}>Settings</Text>
+                        <View style={{ width: 100, flex: 1, justifyContent: 'center' }} >
+                            <Icon name='cog' style={{ color: 'white', alignSelf: 'center' }} size={22} />
                         </View>
                     </TouchableWithoutFeedback>
 
                     <TouchableWithoutFeedback
                         onPress={() => this.props.navigation.navigate('Connection')}
                     >
-                        <View>
-                            <Text style={styles.bottomTextStyle}>Connection</Text>
+                        <View style={{ width: 100, flex: 1, justifyContent: 'center' }} >
+                            <Icon style={{ color: 'white', alignSelf: 'center' }} name='phone' size={22} />
                         </View>
                     </TouchableWithoutFeedback>
 
@@ -62,24 +61,33 @@ const styles = {
         alignItems: 'stretch'
     },
 
-    itemStyle: {
-        borderWidth: 1,
-        borderColor: 'black',
-        borderRadius: 5,
-        padding: 10,
-        margin: 20
+    buttonStyle: {
+        paddingVertical: 12,
+        paddingHorizontal: 12,
+        borderRadius: 3,
+        backgroundColor: colors.blue,
+        alignItems: 'center',
+        justifyContent: 'center',
+        borderColor: colors.blue,
+        borderWidth: StyleSheet.hairlineWidth,
+        shadowColor: colors.black,
+        shadowOffset: { width: 0, height: 2 },
+        shadowOpacity: 0.1,
+        shadowRadius: 3,
+        margin: 10
     },
 
-    itemContentStyle: {
-        textAlign: 'center'
+    buttonContentStyle: {
+        textAlign: 'center',
+        fontWeight: '600'
     },
     bottomStyle: {
-        padding: 20,
         height: 60,
         backgroundColor: colors.orange,
         flexDirection: 'row',
         justifyContent: 'space-between'
     },
+
     bottomTextStyle: {
         fontSize: 20,
         color: colors.white
