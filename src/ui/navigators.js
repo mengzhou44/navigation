@@ -1,12 +1,17 @@
+import { View, Text } from 'react-native';
+
 import {
   StackNavigator,
   TabNavigator,
   TabBarBottom
 } from 'react-navigation';
 
+
+
 import { colors, globalStyles } from './constants';
 import ScreenBrand from './brand/screen-brand';
 import ScreenScan from './scan/screen-scan';
+import ScreenScanStart from './scan/screen-scan-start';
 import ScreenHome from './screen-home';
 import ScreenSettings from './screen-settings';
 import ScreenConnection from './screen-connection';
@@ -18,43 +23,43 @@ const _headerStyle = {
   headerTintColor: colors.white,
   headerTitleStyle: {
     color: colors.white,
-    fontSize: 18,
+    fontSize: 20,
   },
   headerBackTitleStyle: {
     color: colors.white
   }
 };
 
+const ScanNav = StackNavigator({
+  Scan: {
+    screen: ScreenScan,
+  },
+  ScanStart: {
+    screen: ScreenScanStart,
+  }
+}, {
+    initialRouteName: 'Scan',
+    navigationOptions: ({ navigation }) => ({
+      header: null
+    }),
+  })
+
 export const Root = StackNavigator({
   Home: {
     screen: ScreenHome,
     navigationOptions: ({ navigation }) => ({
       title: 'SmartMat',
-      headerBackTitle: 'Back',
-      headerStyle: {
-        backgroundColor: colors.orange
-      },
-      headerTitleStyle: {
-        color: colors.white,
-        fontSize: 20,
-      }
+      headerBackTitle: null,
+      headerLeft: null
     }),
   },
   Scan: {
-    screen: ScreenScan,
-
-    navigationOptions: ({ navigation }) => (
-      {
-        ..._headerStyle,
-        title: 'Scan',
-      }
-    ),
+    screen: ScanNav
   },
   Brand: {
     screen: ScreenBrand,
     navigationOptions: ({ navigation }) => (
       {
-        ..._headerStyle,
         title: 'Brand',
       }
     ),
@@ -63,7 +68,6 @@ export const Root = StackNavigator({
     screen: ScreenSettings,
     navigationOptions: ({ navigation }) => (
       {
-        ..._headerStyle,
         title: 'Settings',
       }
     )
@@ -72,7 +76,6 @@ export const Root = StackNavigator({
     screen: ScreenConnection,
     navigationOptions: ({ navigation }) => (
       {
-        ..._headerStyle,
         title: 'Connection',
       }
     )
@@ -81,6 +84,12 @@ export const Root = StackNavigator({
   {
     initialRouteName: 'Home',
     headerMode: 'float',
+    mode: 'modal',
+    navigationOptions: ({ navigation }) => (
+      {
+        ..._headerStyle,
+
+      })
   }
 );
 

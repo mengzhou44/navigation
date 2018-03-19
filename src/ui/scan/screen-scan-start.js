@@ -2,27 +2,25 @@ import React, { Component } from 'react';
 
 import { View, Text } from 'react-native';
 
-import { globalStyles, colors } from '../constants';
+import { colors, globalStyles } from '../constants';
 
-import { Button, Header } from '../_common';
+import { Header } from '../_common';
 
-
-export default class ScreenScan extends Component {
+export default class ScreenScanStart extends Component {
     render() {
         return (
             <View style={styles.containerStyle}>
-                <Header title='Scan' onBackPressed={() => this.props.navigation.navigate('Home')} />
+                <Header title='Start Scan' onBackPressed={() => this.props.navigation.navigate('Scan')} />
 
-                <Button style={{ flex: 1 }} onPress={() => this.props.navigation.navigate('ScanStart')} >
-                    Start
-                </Button>
+                <Text style={styles.titleStyle}>
+                    Scan Start
+                      </Text>
             </View>
         );
     }
 }
 
 const styles = {
-
     constainerStyle: {
         flex: 1,
         justifyContent: 'flex-start',
