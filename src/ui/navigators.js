@@ -22,8 +22,7 @@ const _headerStyle = {
   },
   headerTintColor: colors.white,
   headerTitleStyle: {
-    color: colors.white,
-    fontSize: 20,
+    color: colors.white
   },
   headerBackTitleStyle: {
     color: colors.white
@@ -88,7 +87,6 @@ export const Root = StackNavigator({
     navigationOptions: ({ navigation }) => (
       {
         ..._headerStyle,
-
       })
   }
 );

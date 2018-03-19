@@ -11,7 +11,7 @@ export default class ScreenScan extends Component {
     render() {
         return (
             <View style={styles.containerStyle}>
-                <Header title='Scan' onBackPressed={() => this.props.navigation.navigate('Home')} />
+                <Header title='SmartMat' onBackPressed={() => this.props.navigation.navigate('Home')} />
 
                 <Button style={{ flex: 1 }} onPress={() => this.props.navigation.navigate('ScanStart')} >
                     Start

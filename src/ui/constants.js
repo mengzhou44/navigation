@@ -1,3 +1,5 @@
+import { Platform } from 'react-native';
+
 export const colors = {
     white: '#fff',
     black: '#000',
@@ -12,7 +14,10 @@ export const colors = {
     whitesmoke: '#f5f5f5'
 };
 
+
 export const globalStyles = {
+    defaultFontSize: (Platform.OS === 'ios' ? 17 : 20),
+    defaultFontWeight: (Platform.OS === 'ios' ? '700' : '500'),
     greenButton: {
         backgroundColor: colors.green,
         borderColor: colors.green

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-import { View, Text, TouchableWithoutFeedback } from 'react-native';
+import { View, Text, TouchableWithoutFeedback, Platform } from 'react-native';
 
 import Icon from 'react-native-vector-icons/FontAwesome';
 
@@ -45,8 +45,8 @@ const styles = {
     titleStyle: {
         flex: 0.8,
         textAlign: 'center',
-        fontSize: 20,
-        fontWeight: '600',
+        fontSize: globalStyles.defaultFontSize,
+        fontWeight: globalStyles.defaultFontWeight,
         color: colors.white
     }
 }

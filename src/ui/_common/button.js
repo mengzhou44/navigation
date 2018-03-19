@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 
 import { View, Text, TouchableOpacity, StyleSheet } from 'react-native';
 
-import { colors } from '../constants';
+import { colors, globalStyles } from '../constants';
 
 const Button = ({ onPress, children, buttonStyle, textStyle }) => {
 
@@ -19,7 +19,7 @@ const styles = {
     textStyle: {
         textAlign: 'center',
         fontWeight: '600',
-        fontSize: 18
+        fontSize: globalStyles.defaultFontSize
     },
     buttonStyle: {
         paddingTop: 10,
